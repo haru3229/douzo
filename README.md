@@ -1,24 +1,64 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Users テーブル 
 
-* Ruby version
+| Column               | Type    | Options                   |
+| -------------------- | ------- | ------------------------- |   
+| nickname             | string  | null: false               |
+| email                | string  | null: false, unique: true |
+| encrypted_password   | string  | null: false               |
+| introduction         | string  | null: false               |
 
-* System dependencies
+### Association
 
-* Configuration
+has_many :items
+has_many :orders
+has_many :comments
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+## Items テーブル 
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column          | Type         | Options                        |
+| --------------- | ------------ | ------------------------------ |   
+| name            | string       | null: false                    |
+| item_text       | text         | null: false                    |
+| category_id     | integer      | null: false                    |
+| price           | integer      | null: false                    |
+| user            | references   | null: false, foreign_key: true |
 
-* Deployment instructions
+### Association
 
-* ...
+belongs_to :user
+has_one :order
+has_many :comments
+
+
+
+##  Ordersテーブル 
+
+| Column     | Type        | Options                        |
+| ---------- | ----------- | ------------------------------ |   
+| item       | references  | null: false, foreign_key: true |
+| user       | references  | null: false, foreign_key: true |
+
+### Association
+
+belongs_to :user
+belongs_to :item
+
+
+
+## Comments テーブル 
+
+| Column               | Type        | Options                        |
+| -------------------- | ----------- | ------------------------------ |   
+| comment_text         | text        | null: false                    |
+| item                 | references  | null: false, foreign_key: true |
+| user                 | references  | null: false, foreign_key: true |
+
+### Association
+
+belongs_to :user
+belongs_to :item
