@@ -1,10 +1,13 @@
 <header>
-Douzo どうぞ
+  <%= link_to "Douzo どうぞ", root_path %>
 はじめに
 QA
-ログイン
-新規登録
+<% if user_signed_in? %>
+  <%= link_to "「#{current_user.nickname}」様", edit_user_registration_path, class: "user-nickname" %>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+  <% else %>
+  <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+  <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+  <% end %>
 
-こんにちは，さん
-ログアウト
 </header>
