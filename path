@@ -16,6 +16,14 @@ Prefix Verb   URI Pattern                                                       
                                       POST   /users(.:format)                                                                         devise/registrations#create
                           items_index GET    /items/index(.:format)                                                                   items#index
                                  root GET    /                                                                                        items#index
+                           item_users GET    /items/:item_id/users(.:format)                                                          users#index
+                                      POST   /items/:item_id/users(.:format)                                                          users#create
+                        new_item_user GET    /items/:item_id/users/new(.:format)                                                      users#new
+                       edit_item_user GET    /items/:item_id/users/:id/edit(.:format)                                                 users#edit
+                            item_user GET    /items/:item_id/users/:id(.:format)                                                      users#show
+                                      PATCH  /items/:item_id/users/:id(.:format)                                                      users#update
+                                      PUT    /items/:item_id/users/:id(.:format)                                                      users#update
+                                      DELETE /items/:item_id/users/:id(.:format)                                                      users#destroy
                                 items GET    /items(.:format)                                                                         items#index
                                       POST   /items(.:format)                                                                         items#create
                              new_item GET    /items/new(.:format)                                                                     items#new
@@ -24,7 +32,6 @@ Prefix Verb   URI Pattern                                                       
                                       PATCH  /items/:id(.:format)                                                                     items#update
                                       PUT    /items/:id(.:format)                                                                     items#update
                                       DELETE /items/:id(.:format)                                                                     items#destroy
-                                 user GET    /users/:id(.:format)                                                                     users#show
         rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                  action_mailbox/ingresses/postmark/inbound_emails#create
            rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                     action_mailbox/ingresses/relay/inbound_emails#create
         rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                  action_mailbox/ingresses/sendgrid/inbound_emails#create

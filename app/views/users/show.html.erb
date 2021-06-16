@@ -1,3 +1,6 @@
 <%= render "shared/header" %>
 <%# 個人の詳細 MYページ %>
+個人の詳細ページ<br/>
 <%= "#{current_user.nickname}さんのページです" %>
+
+<%= render partial: "items/item", collection: @items %>

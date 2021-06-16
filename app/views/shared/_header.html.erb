@@ -4,7 +4,7 @@
 QA
 <% if user_signed_in? %>
   <%= link_to "「#{current_user.nickname}」様", edit_user_registration_path, class: "user-nickname" %>
-  <%= link_to "Myページ", user_path(current_user.id) %>
+  <%= link_to "Myページ", root_path(current_user.id) %>
   <%= link_to "出品", new_item_path %>
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
 

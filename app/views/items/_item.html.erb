@@ -3,10 +3,12 @@
 
 <%#= アイテムの画像 %>
 <p>
-<%= link_to image_tag item.image.variant(resize: '300x300') if item.image.attached? %>
+<%= link_to item_path(item.id) do %>
+<%= image_tag item.image.variant(resize: '300x300') if item.image.attached? %>
+<% end %>
 </p>
 
 <%#= アイテムのタイトル %>
 <p>
-<%= link_to item.name %>
+<%= item.name %>
 </p>

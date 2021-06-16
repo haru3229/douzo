@@ -1,8 +1,23 @@
 <%= render "shared/header" %>
 
 <%# アイテムの詳細,コメントも %>
-
+個々のアイテム詳細ページ<br/>
+<%= "#{current_user.nickname}様のアイテム" %>
 
 <% if @item.image.attached? %>
-  <%= image_tag @item.image %>
+  <%= image_tag @item.image.variant(resize: '600x600') %>
 <% end %>
+<br/>
+アイテム名<br>
+<%= @item.name %><br>
+カテゴリー<br>
+<%= @item.category.name %><br>
+アイテムの説明<br>
+<%= @item.item_text %><br>
+交換方法<br>
+<%= @item.price %><br>
+
+
+<%= link_to '編集', edit_item_path(@item.id), method: :get %>
+
+<%= link_to '削除', item_path(@item.id), method: :delete %>

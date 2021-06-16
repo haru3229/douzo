@@ -1,0 +1,9 @@
+<%= render "shared/header" %>
+
+アイテムの編集ページ<br>
+
+<% if @item.image.attached? %>
+  <%= image_tag @item.image.variant(resize: '500x500') %>
+<% end %>
+
+<%= render partial: "form", locals: { item: @item } %>
