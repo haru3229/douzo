@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 <%# トップページ %>
 
-<%# 画面上部%>
+<%# 画面上部 %>
 <section class="top">
  
   <h1 class="title">「Douzo どうぞ」へようこそ</h1>
@@ -13,15 +13,6 @@
 <p>「どうぞ」の一例</p>
 
 <%= render partial: "item", collection: @items %>
-<%#= image_tag item.image.variant(resize: '500×500') if item.image.attached? %>
-<%# end %>
-<%# if @items.images.attached? %>
-  <div class = 'images'>
-  <%# item.images.each do |image| %>
-  <%#= image_tag image %>
-  </div>
-  <%# end %>
-<%# end %>
 
 
 <%# /サンプル画像を貼り付ける %>
