@@ -1,0 +1,8 @@
+<%= render "shared/header" %>
+
+<%# アイテムの詳細,コメントも %>
+
+
+<% if @item.image.attached? %>
+  <%= image_tag @item.image %>
+<% end %>

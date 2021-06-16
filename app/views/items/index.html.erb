@@ -1,60 +1,41 @@
 <%= render "shared/header" %>
+<%# トップページ %>
 
 <%# 画面上部%>
 <section class="top">
  
-  <h1 class="title">トップページです</h1>
-  <p>
-      ようこそ「Douzo どうぞ」へ<br>
-      「ゆずりたい」「ほしい」をつなげるお手伝い<br>
+  <h1 class="title">「Douzo どうぞ」へようこそ</h1>
+  <p>「ゆずりたい」「ほしい」をつなげるお手伝いをします<br>
   </p>
 </section>
+
+<%# サンプル画像を貼り付ける %>
 <p>「どうぞ」の一例</p>
 
+<%= render partial: "item", collection: @items %>
+<%#= image_tag item.image.variant(resize: '500×500') if item.image.attached? %>
+<%# end %>
+<%# if @items.images.attached? %>
+  <div class = 'images'>
+  <%# item.images.each do |image| %>
+  <%#= image_tag image %>
+  </div>
+  <%# end %>
+<%# end %>
 
 
+<%# /サンプル画像を貼り付ける %>
 
+<%# 商品検索 %>
+<p>さがしてみよう</p>
+制服
+制帽
+ポロシャツ
+体操服
+道具（お道具箱，算数セットなど）
+靴
+おもちゃ
+本
+文房具
 
-<h2>Favorite books</h2>
-<ul class="accordion-menu">
-  <li>
-    <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i> History
-      <i class="fa fa-chevron-down" aria-hidden="true"></i>
-    </div>
-    <ul class="submenuItems">
-      <li><a href="#">History book 1</a></li>
-      <li><a href="#">History book 2</a></li>
-      <li><a href="#">History book 3</a></li>
-    </ul>
-  </li>
-  <li>
-    <div class="dropdownlink"><i class="fa fa-paper-plane" aria-hidden="true"></i> Fiction
-      <i class="fa fa-chevron-down" aria-hidden="true"></i>
-    </div>
-    <ul class="submenuItems">
-      <li><a href="#">Fiction book 1</a></li>
-      <li><a href="#">Fiction book 2</a></li>
-      <li><a href="#">Fiction book 3</a></li>
-    </ul>
-  </li>
-  <li>
-    <div class="dropdownlink"><i class="fa fa-quote-left" aria-hidden="true"></i> Fantasy
-      <i class="fa fa-chevron-down" aria-hidden="true"></i>
-    </div>
-    <ul class="submenuItems">
-      <li><a href="#">Fantasy book 1</a></li>
-      <li><a href="#">Fantasy book 2</a></li>
-      <li><a href="#">Fantasy book 3</a></li>
-    </ul>
-  </li>
-  <li>
-    <div class="dropdownlink"><i class="fa fa-motorcycle" aria-hidden="true"></i> Action
-      <i class="fa fa-chevron-down" aria-hidden="true"></i>
-    </div>
-    <ul class="submenuItems">
-      <li><a href="#">Action book 1</a></li>
-      <li><a href="#">Action book 2</a></li>
-      <li><a href="#">Action book 3</a></li>
-    </ul>
-  </li>
-</ul>
+<%# 商品検索 %>
