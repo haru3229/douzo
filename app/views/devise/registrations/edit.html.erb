@@ -1,3 +1,5 @@
+<h1>ユーザーの編集画面</h1>
+
 <h2><%= link_to "#{current_user.nickname}様のユーザー編集", root_path %><%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -34,6 +36,11 @@
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :introduction %>（自己紹介）※任意です<br />
+    <%= f.text_area :introduction, autofocus: true, placeholder:"趣味はキャンプです", autocomplete: "introduction" %>
   </div>
 
   <div class="actions">

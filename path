@@ -16,14 +16,7 @@ Prefix Verb   URI Pattern                                                       
                                       POST   /users(.:format)                                                                         devise/registrations#create
                           items_index GET    /items/index(.:format)                                                                   items#index
                                  root GET    /                                                                                        items#index
-                           item_users GET    /items/:item_id/users(.:format)                                                          users#index
-                                      POST   /items/:item_id/users(.:format)                                                          users#create
-                        new_item_user GET    /items/:item_id/users/new(.:format)                                                      users#new
-                       edit_item_user GET    /items/:item_id/users/:id/edit(.:format)                                                 users#edit
                             item_user GET    /items/:item_id/users/:id(.:format)                                                      users#show
-                                      PATCH  /items/:item_id/users/:id(.:format)                                                      users#update
-                                      PUT    /items/:item_id/users/:id(.:format)                                                      users#update
-                                      DELETE /items/:item_id/users/:id(.:format)                                                      users#destroy
                                 items GET    /items(.:format)                                                                         items#index
                                       POST   /items(.:format)                                                                         items#create
                              new_item GET    /items/new(.:format)                                                                     items#new
@@ -52,3 +45,4 @@ rails_conductor_inbound_email_reroute POST   /rails/conductor/action_mailbox/:in
                    rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
             update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
                  rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+kotaro@habarakoutarounoMacBook-Pro douzo % 

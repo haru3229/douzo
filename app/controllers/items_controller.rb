@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user_id = current_user.id
     if @item.save
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render :new
     end
@@ -28,13 +28,13 @@ class ItemsController < ApplicationController
   def update
     item = Item.find(params[:id])
     item.update(item_params)
-    redirect_to root_path
+    redirect_to user_path(current_user.id)
   end
 
   def destroy
     item = Item.find(params[:id])
     item.destroy
-    redirect_to root_path
+    redirect_to user_path(current_user.id)
   end
 
   private

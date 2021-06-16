@@ -13,12 +13,12 @@
 アイテムの説明<br />
 <%= f.text_area :item_text, id:"item-text" %><br />
 
-カテゴリー<br />
+カテゴリー<br/>
 <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
 どうぞ<br />
 
-交換方法<br />
-<%= f.text_area :price, id:"item-price" %><br />
+交換方法<br/>
+<%= f.text_area :price, id:"item-price" %><br/>
 
 <%# 下部ボタン %>
 <%= f.submit "出品する", class:"sell-btn" %><br />
