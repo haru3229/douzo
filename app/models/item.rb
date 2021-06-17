@@ -4,9 +4,13 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  validates :content, presence: true, unless: :was_attached?
+  validates :content,     presence: true, unless: :was_attached?
+  validates :name,        presence: true
+  validates :item_text,   presence: true
+  validates :category_id, presence: true, numericality: { other_than: 1 }
+  validates :price,       presence: true
 
   def was_attached?
-    self.image.attached?
+    image.attached?
   end
 end

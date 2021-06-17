@@ -1,16 +1,44 @@
-<%= render "shared/header" %>
 <%# トップページ %>
 
 <%# 画面上部 %>
 <section class="top">
- 
-  <h1 class="title">「Douzo どうぞ」へようこそ</h1>
-  <p>「ゆずりたい」「ほしい」をつなげるお手伝いをします<br>
+ <header>
+ <div class="top-header">
+  <%= link_to image_tag("risu.png", :size => '30x30'), root_path  %>
+  <%= link_to "Douzo〜どうぞ〜", root_path, class: "link" %>
+
+  <%= link_to image_tag("tora.png", :size => '30x30'), root_path %>
+  <%= link_to "QA", root_path, class: "link" %>
+
+  <% if user_signed_in? %>
+    <%= link_to image_tag("tora.png", :size => '30x30'), edit_user_registration_path %>
+    <%= link_to "「#{current_user.nickname}」さん", edit_user_registration_path, class: "link" %>
+
+    <%= link_to image_tag("tora.png", :size => '30x30'), user_path(current_user.id) %>
+    <%= link_to "Myページ", user_path(current_user.id), class: "link" %>
+
+    <%= link_to image_tag("制服.png", :size => '30x30'), new_item_path %>
+    <%= link_to "出品", new_item_path, class: "link" %>
+
+    <%= link_to image_tag("tora.png", :size => '30x30'), destroy_user_session_path %>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "link" %>
+
+    <% else %>
+    <%= link_to 'ログイン', new_user_session_path, class: "link" %>
+    <%= link_to '新規登録', new_user_registration_path, class: "link" %>
+  <% end %>
+
+  <%= link_to image_tag("tora.png", :size => '30x30'), items_path %>
+  <%= link_to '探す', items_path, class: "link" %>
+</div>
+</header>
+  <h1 class="title">「Douzo どうぞ」</h1>
+  <p class="title">「ゆずりたい」「ほしい」をつなげます</p><br>
   </p>
 </section>
 
 <%# サンプル画像を貼り付ける %>
-<p>「どうぞ」の一例</p>
+<p>出品例</p>
 
 <%= render partial: "item", collection: @items %>
 

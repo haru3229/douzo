@@ -1,10 +1,40 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .top {
-  background-image: image-url('children.jpg');
+  background-image: image-url('child.jpg');
   text-align: center;
-  padding-top: 10vh;
+  padding-top: 1vh;
+  height: 80vh;
+  width: 100vw;
+}
+
+.link {
+  text-decoration: none;
+  color:white;
+  font-weight: bolder;
+}
+
+.top-header {
+  text-justify: auto;
+  font-size: larger;
+  font-family:fantasy;
+}
+
+.headershare {
+  font-size: larger;
+  font-family: fantasy;
+  text-justify: auto;
+  font-weight: bolder;
+  text-decoration: none;
+  color:plum;
+}
+
+.title {
+  font-family:initial;
+  font-weight: bolder;
+  color: white;
 }
 
 section {
