@@ -2,12 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top {
+.top-image {
   background-image: image-url('child.jpg');
   text-align: center;
   padding-top: 1vh;
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
+}
+
+.second-top-image {
+  background-image: image-url('girl.jpg');
+  height: 100vh;
+  width: 100vw;
+}
+
+.third-top-image {
+  background-image: image-url('book.jpg');
+  height: 100vh;
+  width: 100vw;
+}
+
+.background{
+  background-color: gray;
+  width: 40vw;
+  height: auto;
+  margin: auto;
+}
+.images{
+  width: 30vw;
+  height: auto;
+  padding: 30px;
+  margin: auto;
+  background-color: lightblue;
+}
+.images img{
+  width: 50%;
+  height: auto;
 }
 
 .link {

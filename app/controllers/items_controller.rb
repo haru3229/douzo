@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
 
   def index
     @items = Item.all
@@ -38,6 +38,7 @@ class ItemsController < ApplicationController
     item.destroy
     redirect_to user_path(current_user.id)
   end
+
 
   private
 

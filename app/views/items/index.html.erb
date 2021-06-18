@@ -1,26 +1,26 @@
 <%# トップページ %>
 
-<%# 画面上部 %>
-<section class="top">
+<%# トップページ① %>
  <header>
+ <section class="top-image">
  <div class="top-header">
-  <%= link_to image_tag("risu.png", :size => '30x30'), root_path  %>
+  <%= link_to image_tag("arisu.png", :size => '30x30'), root_path  %>
   <%= link_to "Douzo〜どうぞ〜", root_path, class: "link" %>
 
-  <%= link_to image_tag("tora.png", :size => '30x30'), root_path %>
+  <%= link_to image_tag("oikakeru.png", :size => '30x30'), root_path %>
   <%= link_to "QA", root_path, class: "link" %>
 
   <% if user_signed_in? %>
-    <%= link_to image_tag("tora.png", :size => '30x30'), edit_user_registration_path %>
+    <%= link_to image_tag("usagi.png", :size => '30x30'), edit_user_registration_path %>
     <%= link_to "「#{current_user.nickname}」さん", edit_user_registration_path, class: "link" %>
 
-    <%= link_to image_tag("tora.png", :size => '30x30'), user_path(current_user.id) %>
+    <%= link_to image_tag("sinsi.png", :size => '25x25'), user_path(current_user.id) %>
     <%= link_to "Myページ", user_path(current_user.id), class: "link" %>
 
-    <%= link_to image_tag("制服.png", :size => '30x30'), new_item_path %>
+    <%= link_to image_tag("bousi.png", :size => '25x25'), new_item_path %>
     <%= link_to "出品", new_item_path, class: "link" %>
 
-    <%= link_to image_tag("tora.png", :size => '30x30'), destroy_user_session_path %>
+    <%= link_to image_tag("kasa.png", :size => '30x30'), destroy_user_session_path %>
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "link" %>
 
     <% else %>
@@ -28,25 +28,38 @@
     <%= link_to '新規登録', new_user_registration_path, class: "link" %>
   <% end %>
 
-  <%= link_to image_tag("tora.png", :size => '30x30'), items_path %>
+  <%= link_to image_tag("sagasu.png", :size => '30x30'), items_path %>
   <%= link_to '探す', items_path, class: "link" %>
 </div>
-</header>
   <h1 class="title">「Douzo どうぞ」</h1>
   <p class="title">「ゆずりたい」「ほしい」をつなげます</p><br>
   </p>
 </section>
-
-<%# サンプル画像を貼り付ける %>
-<p>出品例</p>
-
-<%= render partial: "item", collection: @items %>
+</header>
+<%# トップページ① ここまで %>
 
 
-<%# /サンプル画像を貼り付ける %>
+<body>
+<%# トップページ② 出品例 %>
+<section class="second-top-image">
+<h3>出品例</h3>
+<%= image_tag("taisouhuku.png", :size => '200x200') %>
+<%= image_tag("seihuku-man.png", :size => '200x200') %>
+<%= image_tag("seifuku-girl.png", :size => '200x200') %>
+<%= image_tag("cat.jpg", :size => '200x200') %>
+<%= image_tag("bousi.png", :size => '200x200') %>
+<%= image_tag("arisu.png", :size => '200x200') %>
+</section>
+<%# トップページ② 出品例 ここまで %>
+
+<%#= render partial: "item", collection: @items %>
+
 
 <%# 商品検索 %>
-<p>さがしてみよう</p>
+<section class="third-top-image">
+<h3>さがしてみよう</h3>
+
+
 制服
 制帽
 ポロシャツ
@@ -56,5 +69,6 @@
 おもちゃ
 本
 文房具
-
+</section>
 <%# 商品検索 %>
+</body>
