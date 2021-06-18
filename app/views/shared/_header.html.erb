@@ -1,17 +1,17 @@
 <header>
-  <%= link_to "Douzo どうぞ", root_path %>
-はじめに
-QA
+  <%= link_to "Douzo 〜どうぞ〜", root_path, class: "headershare" %>
+  <%= link_to "はじめに", root_path, class: "headershare" %>
+  <%= link_to "QA", root_path, class: "headershare" %>
 <% if user_signed_in? %>
-  <%= link_to "「#{current_user.nickname}」様", edit_user_registration_path, class: "user-nickname" %>
-  <%= link_to "Myページ", root_path(current_user.id) %>
-  <%= link_to "出品", new_item_path %>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+  <%= link_to "「#{current_user.nickname}」さん", edit_user_registration_path, class: "headershare" %>
+  <%= link_to "Myページ", user_path(current_user.id), class: "headershare" %>
+  <%= link_to "出品", new_item_path, class: "headershare" %>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "headershare" %>
 
   <% else %>
   
-  <%= link_to 'ログイン', new_user_session_path, class: "login" %>
-  <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+  <%= link_to 'ログイン', new_user_session_path, class: "headershare" %>
+  <%= link_to '新規登録', new_user_registration_path, class: "headershare" %>
   <% end %>
-  <%= link_to '探す', items_path %>
+  <%= link_to '探す', items_path, class: "headershare" %>
 </header>

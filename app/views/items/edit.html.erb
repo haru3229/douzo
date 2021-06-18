@@ -1,9 +1,30 @@
 <%= render "shared/header" %>
 
-アイテムの編集ページ<br>
+<h3><%= "#{current_user.nickname}さんのアイテム編集ページ" %></h3>
 
 <% if @item.image.attached? %>
   <%= image_tag @item.image.variant(resize: '500x500') %>
 <% end %>
 
-<%= render partial: "form", locals: { item: @item } %>
+<%= form_with model: @item, local: true do |f| %>
+<p>アイテム名<br />
+<%= f.text_area :name, id:"item-name", placeholder:"商品名（必須 40文字まで）", maxlength:"40" %><br />
+アイテムの画像（なければサンプル画像が表示されます）<br />
+<%= f.file_field :image, id:"item-image" %>
+クリックしてファイルをアップロード<br />
+
+アイテムの説明<br />
+<%= f.text_area :item_text, id:"item-text" %><br />
+
+カテゴリー<br />
+<%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+どうぞ<br />
+
+交換方法<br />
+<%= f.text_area :price, id:"item-price" %><br />
+
+<%# 下部ボタン %>
+<%= f.submit "保存する", class:"sell-btn" %><br />
+<%= link_to 'もどる', user_path(current_user.id), class:"back-btn" %>
+<%# /下部ボタン %>
+<% end %>

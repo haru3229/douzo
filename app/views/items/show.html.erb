@@ -1,23 +1,25 @@
 <%= render "shared/header" %>
 
 <%# アイテムの詳細,コメントも %>
-個々のアイテム詳細ページ<br/>
-<%= "#{current_user.nickname}様のアイテム" %>
+<%= "#{@item.user.nickname}さんの出品" %><br/>
 
 <% if @item.image.attached? %>
   <%= image_tag @item.image.variant(resize: '600x600') %>
 <% end %>
 <br/>
-アイテム名<br>
-<%= @item.name %><br>
-カテゴリー<br>
-<%= @item.category.name %><br>
-アイテムの説明<br>
-<%= @item.item_text %><br>
-交換方法<br>
-<%= @item.price %><br>
+
+[アイテム名]<%= @item.name %><br>
+[カテゴリー]<%= @item.category.name %><br>
+[アイテムの説明]<%= @item.item_text %><br>
+[交換方法]<%= @item.price %><br>
 
 
-<%= link_to '編集', edit_item_path(@item.id), method: :get %>
-
-<%= link_to '削除', item_path(@item.id), method: :delete %>
+<% if user_signed_in? %>
+  <% if current_user == @item.user %>
+    <%= link_to '編集', edit_item_path(@item.id), method: :get %>
+    <%= link_to '削除', item_path(@item.id), method: :delete %>
+  <% else %>
+    <%= link_to '交換画面に進む' %><br/>
+    <%= link_to "#{@item.user.nickname}さんの出品一覧へ", user_path(@item.user.id) %><br/>
+  <% end %>
+<% end %>
