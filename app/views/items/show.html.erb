@@ -23,3 +23,33 @@
     <%= link_to "#{@item.user.nickname}さんの出品一覧へ", user_path(@item.user.id) %><br/>
   <% end %>
 <% end %>
+
+<%# コメント %>
+<div class="container">
+  <% if user_signed_in? %>
+    <%= form_with(model: [@item, @comment], local: true) do |form| %>
+      <%= form.text_area :comment, placeholder: "コメント記入欄", rows: "2" %>
+      <%= form.submit "コメントする" %>
+    <% end %>
+  <% else %>
+    <strong><p>*** コメントの投稿には新規登録/ログインが必要です ***</p></strong>
+  <% end %>
+
+  <div class="comments">
+    <h4>＜コメント一覧＞</h4>
+    <% @comments.each do |comment| %>
+      <p>
+        <strong><%= link_to comment.user.nickname, user_path(comment.user_id) %>さん:</strong>
+        <%= comment.comment %>
+        <% if user_signed_in? %>
+          <% if current_user == comment.user %>
+            <%= link_to '編集', edit_item_comment_path(comment.id), method: :get %>
+            <%= link_to '削除', item_comment_path(comment.item.id, comment.id), method: :delete %>
+          <% end %>
+          <% else %>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+</div>
+<%# コメント ここまで %>

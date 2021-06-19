@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :user
   has_one_attached :image
+  has_many   :comments
 
   validates :content,     presence: true, unless: :was_attached?
   validates :name,        presence: true

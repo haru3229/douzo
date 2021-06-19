@@ -29,7 +29,7 @@
   <% end %>
 
   <%= link_to image_tag("sagasu.png", :size => '30x30'), items_path %>
-  <%= link_to '探す', items_path, class: "link" %>
+  <%= link_to '探す', search_items_path, class: "link" %>
 </div>
   <h1 class="title">「Douzo どうぞ」</h1>
   <p class="title">「ゆずりたい」「ほしい」をつなげます</p><br>
@@ -52,12 +52,14 @@
 </section>
 <%# トップページ② 出品例 ここまで %>
 
-<%#= render partial: "item", collection: @items %>
-
 
 <%# 商品検索 %>
 <section class="third-top-image">
 <h3>さがしてみよう</h3>
+<%#= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%#= form.text_field :keyword, placeholder: "アイテムを検索する", class: "search-input"  %>
+  <%#= form.submit "探す", class: "search-btn" %>
+<%# end %>
 
 
 制服
