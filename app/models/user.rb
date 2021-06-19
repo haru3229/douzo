@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_many :comments
 
   validates :nickname, presence: true
   # email,passwordはすでにバリデーション済み

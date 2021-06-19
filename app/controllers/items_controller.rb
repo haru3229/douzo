@@ -11,6 +11,12 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
+  end
+
+  def search
+    @items = Item.all
   end
 
   def create
@@ -38,7 +44,6 @@ class ItemsController < ApplicationController
     item.destroy
     redirect_to user_path(current_user.id)
   end
-
 
   private
 

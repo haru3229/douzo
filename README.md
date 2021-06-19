@@ -54,7 +54,7 @@ belongs_to :item
 
 | Column               | Type        | Options                        |
 | -------------------- | ----------- | ------------------------------ |   
-| comment_text         | text        | null: false                    |
+| comment              | text        | null: false                    |
 | item                 | references  | null: false, foreign_key: true |
 | user                 | references  | null: false, foreign_key: true |
 
