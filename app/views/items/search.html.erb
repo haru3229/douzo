@@ -7,10 +7,16 @@
 <%# 検索フォーム %>
 <div>
 <%= form_with(url: search_items_path, local:true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "アイテムをさがす", class: "search-input" %>
+  <%= form.text_field :keyword, placeholder: "アイテム名でさがす", class: "search-input" %>
   <%= form.submit "さがす", class: "search-btn" %>
+  <%#= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+  <%#= form.submit "見つける" ,class: "category-search-btn" %>
 <% end %>
 </div>
+
+<%= form_with model: @item, local: true do |f| %>
+<% end %>
+
 <%# /検索フォーム %>
 
 <section class="search-top">

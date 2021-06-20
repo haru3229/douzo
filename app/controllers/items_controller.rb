@@ -18,7 +18,6 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.search(params[:keyword])
-    #@items = Item.all
   end
 
   def create
