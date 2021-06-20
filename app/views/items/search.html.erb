@@ -3,9 +3,23 @@
 <h1>アイテムを探す</h1>
 
 <body>
-<section class="search-top">
+
+<%# 検索フォーム %>
 <div>
-<%= render partial: "item", collection: @items %>
+<%= form_with(url: search_items_path, local:true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "アイテムをさがす", class: "search-input" %>
+  <%= form.submit "さがす", class: "search-btn" %>
+<% end %>
+</div>
+<%# /検索フォーム %>
+
+<section class="search-top">
+
+<div class="contents row">
+  <% @items.each do |item| %>
+    <%= render partial: "item", locals: { item: item } %>
+  <% end %>
 </div>
 </section>
+
 </body>
