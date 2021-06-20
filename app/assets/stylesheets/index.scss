@@ -1,6 +1,9 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+section {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 .top-image {
   background-image: image-url('child.jpg');
@@ -12,12 +15,6 @@
 
 .second-top-image {
   background-image: image-url('girl.jpg');
-  height: 100vh;
-  width: 100vw;
-}
-
-.third-top-image {
-  background-image: image-url('book.jpg');
   height: 100vh;
   width: 100vw;
 }
@@ -104,20 +101,20 @@ h2 {
   color: #fff;
 }
 
-.accordion-menu {
+.accordion-category {
   width: 100%;
   max-width: 350px;
   margin: 60px auto 20px;
   background: #fff;
   border-radius: 4px;
 }
-.accordion-menu li.open .dropdownlink {
+.accordion-category li.open .dropdownlink {
   color: #CDDC39;
   .fa-chevron-down {
     transform: rotate(180deg);
   }
 }
-.accordion-menu li:last-child .dropdownlink {
+.accordion-category li:last-child .dropdownlink {
   border-bottom: 0;
 }
 .dropdownlink {
@@ -140,7 +137,7 @@ h2 {
   }
 }
 
-.submenuItems {
+.subcategoryItems {
   display: none;
   background: #C8E6C9;
   li {
@@ -148,7 +145,7 @@ h2 {
   }
 }
 
-.submenuItems a {
+.subcategoryItems a {
   display: block;
   color: #727272;
   padding: 12px 12px 12px 45px;

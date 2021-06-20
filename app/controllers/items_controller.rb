@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
+  
 
   def index
     @items = Item.all
@@ -16,7 +17,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.all
+    @items = Item.search(params[:keyword])
   end
 
   def create

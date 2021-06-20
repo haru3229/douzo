@@ -6,21 +6,12 @@
  <div class="top-header">
   <%= link_to image_tag("arisu.png", :size => '30x30'), root_path  %>
   <%= link_to "Douzo〜どうぞ〜", root_path, class: "link" %>
-
-  <%= link_to image_tag("oikakeru.png", :size => '30x30'), root_path %>
   <%= link_to "QA", root_path, class: "link" %>
 
   <% if user_signed_in? %>
-    <%= link_to image_tag("usagi.png", :size => '30x30'), edit_user_registration_path %>
     <%= link_to "「#{current_user.nickname}」さん", edit_user_registration_path, class: "link" %>
-
-    <%= link_to image_tag("sinsi.png", :size => '25x25'), user_path(current_user.id) %>
     <%= link_to "Myページ", user_path(current_user.id), class: "link" %>
-
-    <%= link_to image_tag("bousi.png", :size => '25x25'), new_item_path %>
     <%= link_to "出品", new_item_path, class: "link" %>
-
-    <%= link_to image_tag("kasa.png", :size => '30x30'), destroy_user_session_path %>
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "link" %>
 
     <% else %>
@@ -28,7 +19,6 @@
     <%= link_to '新規登録', new_user_registration_path, class: "link" %>
   <% end %>
 
-  <%= link_to image_tag("sagasu.png", :size => '30x30'), items_path %>
   <%= link_to '探す', search_items_path, class: "link" %>
 </div>
   <h1 class="title">「Douzo どうぞ」</h1>
@@ -36,7 +26,7 @@
   </p>
 </section>
 </header>
-<%# トップページ① ここまで %>
+<%# /トップページ① %>
 
 
 <body>
@@ -50,27 +40,4 @@
 <%= image_tag("bousi.png", :size => '200x200') %>
 <%= image_tag("arisu.png", :size => '200x200') %>
 </section>
-<%# トップページ② 出品例 ここまで %>
-
-
-<%# 商品検索 %>
-<section class="third-top-image">
-<h3>さがしてみよう</h3>
-<%#= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%#= form.text_field :keyword, placeholder: "アイテムを検索する", class: "search-input"  %>
-  <%#= form.submit "探す", class: "search-btn" %>
-<%# end %>
-
-
-制服
-制帽
-ポロシャツ
-体操服
-道具（お道具箱，算数セットなど）
-靴
-おもちゃ
-本
-文房具
-</section>
-<%# 商品検索 %>
-</body>
+<%# /トップページ② 出品例 %>
