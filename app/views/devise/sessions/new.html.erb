@@ -1,17 +1,22 @@
 <%# ログイン画面 %>
-<%= render "shared/header" %>
-<br/>
-<h3>ログイン</h3><br/>
+<section class="top-image">
+    <div class="top-header">
+<%= render "shared/menu" %>
 
+<div class='accordion-category'>
+<br/>
+<h3>ログイン</h3>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
+    <span class="red-btn">必須</span> <br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.label :password %>
+    <span class="red-btn">必須</span> <br/>
+    <%= f.password_field :password, autocomplete: "current-password" %>  
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -21,9 +26,13 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
+  <div class="login-btn">
+    <%= f.submit "ログイン", class:"login-red-btn" %>
   </div>
 <% end %>
+<br/>
+<%= render "devise/shared/links" %><br/>
 
-<%= render "devise/shared/links" %>
+</div>
+</div>
+</section>

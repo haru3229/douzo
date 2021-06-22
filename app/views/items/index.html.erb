@@ -1,43 +1,24 @@
 <%# トップページ %>
 
 <%# トップページ① %>
- <header>
- <section class="top-image">
- <div class="top-header">
-  <%= link_to image_tag("arisu.png", :size => '30x30'), root_path  %>
-  <%= link_to "Douzo〜どうぞ〜", root_path, class: "link" %>
-  <%= link_to "QA", root_path, class: "link" %>
+  <section class="top-image">
+   <div class="top-header">
+      <%= render "shared/menu" %>
 
-  <% if user_signed_in? %>
-    <%= link_to "「#{current_user.nickname}」さん", edit_user_registration_path, class: "link" %>
-    <%= link_to "Myページ", user_path(current_user.id), class: "link" %>
-    <%= link_to "出品", new_item_path, class: "link" %>
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "link" %>
+      <%# トップページのタイトル %>
+    
 
-    <% else %>
-    <%= link_to 'ログイン', new_user_session_path, class: "link" %>
-    <%= link_to '新規登録', new_user_registration_path, class: "link" %>
-  <% end %>
+     <br/><br/>
+     <div class="title">「Douzo 
+     <span class="title1">〜どうぞ〜</span>」</div>
+     <span class="easel">
+     <%= image_tag("easel.png") %></span>
+     <span class="sample">
+     <%= image_tag("ehon.png") %></span>
+    </div>
+  </section>
 
-  <%= link_to '探す', search_items_path, class: "link" %>
-</div>
-  <h1 class="title">「Douzo どうぞ」</h1>
-  <p class="title">「ゆずりたい」「ほしい」をつなげます</p><br>
-  </p>
-</section>
-</header>
-<%# /トップページ① %>
-
-
-<body>
-<%# トップページ② 出品例 %>
-<section class="second-top-image">
-<h3>出品例</h3>
-<%= image_tag("taisouhuku.png", :size => '200x200') %>
-<%= image_tag("seihuku-man.png", :size => '200x200') %>
-<%= image_tag("seifuku-girl.png", :size => '200x200') %>
-<%= image_tag("cat.jpg", :size => '200x200') %>
-<%= image_tag("bousi.png", :size => '200x200') %>
-<%= image_tag("arisu.png", :size => '200x200') %>
-</section>
-<%# /トップページ② 出品例 %>
+   
+    <%# トップページ② 出品例 %>
+  <section class="second-top-image">
+  </section>

@@ -1,4 +1,6 @@
-<%= render "shared/header" %>
+<section class="top-image">
+    <div class="top-header">
+      <%= render "shared/menu" %>
 
 <h3><%= "#{current_user.nickname}さんのアイテム編集ページ" %></h3>
 
@@ -7,9 +9,10 @@
 <% end %>
 
 <%= form_with model: @item, local: true do |f| %>
-<p>アイテム名<br />
+<br/>
+アイテム名<br />
 <%= f.text_area :name, id:"item-name", placeholder:"商品名（必須 40文字まで）", maxlength:"40" %><br />
-アイテムの画像（なければサンプル画像が表示されます）<br />
+アイテムの画像<br />
 <%= f.file_field :image, id:"item-image" %>
 クリックしてファイルをアップロード<br />
 
@@ -28,3 +31,6 @@
 <%= link_to 'もどる', user_path(current_user.id), class:"back-btn" %>
 <%# /下部ボタン %>
 <% end %>
+
+</div>
+</section>

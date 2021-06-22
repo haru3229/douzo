@@ -1,0 +1,32 @@
+.form-wrap {
+  width: 50vw;
+  background-color: white;
+  padding-bottom: 70px;
+  color: black;
+}
+
+.accordion-category {
+  width: 100%;
+  max-width: 40vw;
+  margin: 15px auto 20px;
+  background: #fff;
+  border-radius: 4px;
+  color: black;
+  font-size: 3vh;
+}
+
+.accordion-category li.open .dropdownlink {
+  color: #CDDC39;
+  .fa-chevron-down {
+    transform: rotate(180deg);
+  }
+}
+
+
+.accordion-category li:last-child .dropdownlink {
+  border-bottom: 0;
+}
+
+.field{
+  display: inline-table;
+}

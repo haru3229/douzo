@@ -1,6 +1,20 @@
 <%# 個人の詳細 「MYページ」 %>
-<%= render "shared/header" %>
-<br/>
-<h3><%= "#{@user.nickname}さんのお部屋" %></h3>
+<section class="top-image">
+  <div class="top-header">
 
-<%= render partial: "items/item", collection: @items %>
+    <%# メニュー %>
+    <%= render "shared/menu" %>
+
+    <br/><br/>
+    <span class="title2"><%= "#{@user.nickname}さんの部屋（出品数#{@items.count}）" %></span><br/>
+    <%= link_to "(ユーザー情報の編集)", edit_user_registration_path, class: "title3" %>
+  </div>
+    <% @items.reverse_each do |item| %>
+    <div class="item-list">
+    <%= render partial: "shared/item", locals: { item: item } %>
+    </div>
+    <% end %>
+</section>
+
+<section class="second-top-image">
+  </section>

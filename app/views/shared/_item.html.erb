@@ -4,11 +4,9 @@
 <%#= アイテムの画像 %>
 <p>
 <%= link_to item_path(item.id) do %>
-<%= image_tag item.image.variant(resize: '300x300') if item.image.attached? %>
+<%= image_tag item.image.variant(resize: '20%x20%') if item.image.attached? %>
 <% end %>
 </p>
-<%# /アイテムの画像 %>
-
 
 <%#= アイテムの名前，カテゴリー，出品者 %>
 <p>
@@ -16,5 +14,4 @@
 <%= "( #{item.category.name} )" %>
 <%= "<by #{item.user.nickname}さん>" %>
 </p><br/>
-<%#= /アイテムの名前，カテゴリー，出品者 %>
 
