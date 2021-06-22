@@ -1,0 +1,21 @@
+<%# メニュー %>
+      <div class="logo0">
+      <%= link_to image_tag("arisu.png"), root_path, class: "logo" %>
+      <%= link_to "Douzo", root_path, class: "logo1" %></div>
+
+      <span class="menu">
+      <%= link_to "サイトについて", root_path, class: "link" %>
+
+      <% if user_signed_in? %>
+        <%= link_to "Myページ", user_path(current_user.id), class: "link" %>
+        <%= link_to "出品", new_item_path, class: "link" %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "link" %>
+
+      <% else %>
+        <%= link_to 'ログイン', new_user_session_path, class: "link" %>
+        <%= link_to '新規登録', new_user_registration_path, class: "link" %>
+
+      <% end %>
+      <%= link_to image_tag("megane.png"), search_items_path, class: "search" %>
+      </span>
+      <%# /メニュー %>

@@ -1,19 +1,23 @@
-<%= render "shared/header" %>
-
+<section class="top-image">
+    <div class="top-header">
+<%= render "shared/menu" %>
+</div>
 <%# アイテムの詳細,コメントも %>
-<%= "#{@item.user.nickname}さんの出品" %><br/>
+<br/><span class="title2">
+<%= "#{@item.user.nickname}さんの出品" %></div><br/>
 
 <% if @item.image.attached? %>
   <%= image_tag @item.image.variant(resize: '600x600') %>
 <% end %>
-<br/>
 
+<div class="accordion-category"><br/>
 [アイテム名]<%= @item.name %><br>
 [カテゴリー]<%= @item.category.name %><br>
 [アイテムの説明]<%= @item.item_text %><br>
-[交換方法]<%= @item.price %><br>
-
-
+[交換方法]<%= @item.price %></div>
+</div>
+</section
+>
 <% if user_signed_in? %>
   <% if current_user == @item.user %>
     <%= link_to '編集', edit_item_path(@item.id), method: :get %>
@@ -37,7 +41,7 @@
 
   <div class="comments">
     <h4>＜コメント一覧＞</h4>
-    <% @comments.each do |comment| %>
+    <% @comments.reverse_each do |comment| %>
       <p>
         <strong><%= link_to comment.user.nickname, user_path(comment.user_id) %>さん:</strong>
         <%= comment.comment %>
@@ -53,3 +57,6 @@
   </div>
 </div>
 <%# コメント ここまで %>
+
+</div>
+</section>
