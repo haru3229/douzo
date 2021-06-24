@@ -15,16 +15,11 @@
  「学用品が欲しいが，子どもの成長による買い替えや費用の面の課題があるため，安く購入したい。」
  「知り合いが少なく，「売り（譲り）たい」「欲しい」相手が分からない。」
 
- 以上の願いをマッチさせるためのアプリケーションを作りたいと思い，開発しています。
+ 以上の願いをマッチさせるためのアプリケーションを作りたいと思い，開発している途中です。
 
 # DEMO
  ### Myページ
  https://gyazo.com/7351a4b4401d1998fa525f4ae842e855
- https://i.gyazo.com/b1be3f7bd7b329b1b04151364a44aa78.gif
- <a href="https://gyazo.com/7351a4b4401d1998fa525f4ae842e855"><video alt="Video from Gyazo" width="1000" autoplay muted loop playsinline controls><source src="https://i.gyazo.com/7351a4b4401d1998fa525f4ae842e855.mp4" type="video/mp4" /></video></a>
- https://i.gyazo.com/7351a4b4401d1998fa525f4ae842e855.mp4
-
- [![Image from Gyazo](https://i.gyazo.com/b1be3f7bd7b329b1b04151364a44aa78.gif)](https://gyazo.com/b1be3f7bd7b329b1b04151364a44aa78)
 
  ### アイテム検索
  https://gyazo.com/b1be3f7bd7b329b1b04151364a44aa78
