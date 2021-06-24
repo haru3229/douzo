@@ -19,10 +19,10 @@
 
 # DEMO
  ### Myページ
- https://gyazo.com/7351a4b4401d1998fa525f4ae842e855
+ [![Image from Gyazo](https://i.gyazo.com/7351a4b4401d1998fa525f4ae842e855.gif)](https://gyazo.com/7351a4b4401d1998fa525f4ae842e855)
 
  ### アイテム検索
- https://gyazo.com/b1be3f7bd7b329b1b04151364a44aa78
+ [![Image from Gyazo](https://i.gyazo.com/b1be3f7bd7b329b1b04151364a44aa78.gif)](https://gyazo.com/b1be3f7bd7b329b1b04151364a44aa78)
 
 # 実装予定の機能
  - 購入予定者と出品者だけでコメントしあえる
