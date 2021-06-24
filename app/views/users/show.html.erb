@@ -6,7 +6,7 @@
     <%= render "shared/menu" %>
 
     <br/><br/>
-    <span class="title2"><%= "#{@user.nickname}さんの部屋（出品数#{@items.count}）" %></span><br/>
+    <span class="title2"><%= "#{@user.nickname}さんのお部屋（出品数#{@items.count}）" %></span><br/>
     <%= link_to "(ユーザー情報の編集)", edit_user_registration_path, class: "title3" %>
   </div>
     <% @items.reverse_each do |item| %>
