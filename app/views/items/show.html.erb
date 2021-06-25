@@ -1,4 +1,4 @@
-<section class="top-image">
+<div class="top-image">
     <div class="top-header">
 <%= render "shared/menu" %>
 </div>
@@ -16,8 +16,7 @@
 [アイテムの説明]<%= @item.item_text %><br>
 [交換方法]<%= @item.price %></div>
 </div>
-</section
->
+</div>
 <% if user_signed_in? %>
   <% if current_user == @item.user %>
     <%= link_to '編集', edit_item_path(@item.id), method: :get %>
@@ -59,4 +58,4 @@
 <%# コメント ここまで %>
 
 </div>
-</section>
+</div>

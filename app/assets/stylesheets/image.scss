@@ -6,6 +6,34 @@ section {
   color: white;
 }
 
+.top-header {
+  text-justify: auto;
+  font-size: 2vmax;
+  font-family:fantasy;
+  img {width: 5vw};
+  word-spacing: 40px;
+}
+
+.slider {
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  left: 30vw;
+  top: 10vh;
+  animation-name: fadein;
+    animation-duration: 20s;
+}
+@keyframes fadein {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
 .top-image {
   background-image: image-url('bear.jpg');
   text-align: center;
@@ -41,25 +69,7 @@ section {
   padding: 15px;
 }
 
-.link {
-  text-decoration: none;
-  color:white;
-  font-weight: bolder;
-}
 
-.top-header {
-  text-justify: auto;
-  font-size: 2vmax;
-  font-family:fantasy;
-  img {width: 5vw};
-  word-spacing: 40px;
-}
-
-.easel {
-  img {height: 64vh};
-  img {width: 64vw};
-  padding-left: 40vw;
-}
 
 .sample {
   img {height: 15vh};

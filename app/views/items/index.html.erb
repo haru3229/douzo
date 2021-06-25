@@ -1,31 +1,31 @@
 <%# トップページ %>
 
 <%# トップページ① %>
-  <section class="top-image">
-   <div class="top-header">
-      <%= render "shared/menu" %>
+<section class="top-image">
+  <div class="top-header">
+    <%# メニュー %>
+    <%= render "shared/menu" %>
+  </div>
+  
+  <%# トップページのタイトル %>
+  <br/><br/>
+  <div class="title">「Douzo 
+    <span class="title1">〜どうぞ〜</span>」
+  </div>
 
-      <%# トップページのタイトル %>
-    
-
-     <br/><br/>
-     <div class="title">「Douzo 
-     <span class="title1">〜どうぞ〜</span>」</div>
-     <p>思い出の品を交換しませんか</p>
-     <span class="easel">
-     <%= image_tag("easel.png") %></span>
-     <%# <span class="sample">
-     <%= image_tag("ehon.png") %></span>
+  <div class="title2">「思い出の品」交換しませんか
+    <%# スライドショー %>
+    <div class="slider">
+      <img src="assets/1.jpg">
+      <img src="assets/5.jpg">
+      <img src="assets/6.jpg">
+      <img src="assets/7.jpg">
+      <img src="assets/2.jpg">
+      <img src="assets/3.jpg">
     </div>
+  </div>
 
-  </section>
- <%# スライドショー %>
-    <%# <div class="a">
-      <div class="b"><img class="c" src="assets/cat.jpg"></div>
-      <div class="b"><img class="c" src="assets/bear.jpg"></div>
-      <div class="b"><img class="c" src="assets/book.jpg"></div>
-    </div> %>
-   
-    <%# トップページ② 出品例 %>
-  <section class="second-top-image">
-  </section>
+</section>
+
+ 
+  
