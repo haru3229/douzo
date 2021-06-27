@@ -6,7 +6,7 @@ class Category < ActiveHash::Base
     { id:  4, name: '学習道具' },
     { id:  5, name: 'おもちゃ' },
     { id:  6, name: '本' },
-    { id:  7, name: 'その他' },
+    { id:  7, name: 'その他' }
   ]
 
   include ActiveHash::Associations
