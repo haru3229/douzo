@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :user
   has_one_attached :image
-  has_many   :comments
+  has_many :comments
 
   validates :content,     presence: true, unless: :was_attached?
   validates :name,        presence: true
@@ -16,7 +16,7 @@ class Item < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Item.where('name LIKE(?)', "%#{search}%")
     else
       Item.all
