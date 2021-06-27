@@ -15,7 +15,9 @@
       <% else %>
         <%= link_to 'ログイン', new_user_session_path, class: "link" %>
         <%= link_to '新規登録', new_user_registration_path, class: "link" %>
-
       <% end %>
-        <%= link_to image_tag("megane.png"), search_items_path, class: "search" %>
+
+        <%= link_to "http://localhost:3000/items/search" do %>
+          <i class="fas fa-search" ></i>
+        <% end %>
       </span>

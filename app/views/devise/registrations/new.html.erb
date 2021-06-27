@@ -1,56 +1,40 @@
 <%# 新規登録画面 %>
 
 <div class="top-image">
-    <div class="top-header">
-<%= render "shared/menu" %>
-
-<div class='accordion-category'>
-<br/>
-<h3>新規登録</h3>
-<br/>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :ニックネーム %>
-    <span class="red-btn">必須</span><br />
-    <%= f.text_field :nickname, autofocus: true, placeholder:"例） もんちゃん", autocomplete: "nickname" %>
+  <div class="top-header">
+    <%= render "shared/menu" %>
   </div>
-  <br/>
-  <div class="field">
-    <%= f.label :email %>
-    <span class="red-btn">必須</span><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>（<%= @minimum_password_length %>文字以上）</em>
-     <span class="red-btn">必須</span><br />
+  
+  <div class='accordion-category'>
+    <br/>
+    <h3>新規登録</h3>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :ニックネーム %><span class="red-btn">必須</span><br />
+        <%= f.text_field :nickname, autofocus: true, placeholder:"例） もんちゃん", autocomplete: "nickname" %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><span class="red-btn">必須</span><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="field">
+        <%= f.label :password %><% if @minimum_password_length %><span class="red-btn">必須</span><br />
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder:"（６文字以上）" %>
+      </div>
+      <div class="field">
+        <%= f.label :password %><span class="red-btn">必須</span><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"（確認用）" %>
+      </div>
+      <div class="field">
+        <%= f.label :自己紹介 %><br />
+        <%= f.text_area :introduction, autofocus: true, placeholder:"例） 趣味はキャンプです", autocomplete: "introduction" %>
+      </div>
+      <div class="field">
+        <%= f.submit "新規登録" %><br/><br/>
+      </div>
     <% end %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-
   </div>
-  <br/>
-  <div class="field">
-    <%= f.label :password（確認用） %>
-    <span class="red-btn">必須</span><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= f.label :自己紹介 %><br />
-    <%= f.text_area :introduction, autofocus: true, placeholder:"趣味はキャンプです", autocomplete: "introduction" %>
-  </div>
-  <br/>
-  <div class="field"><br/>
-    <%= f.submit "新規登録" %>
-  </div>
-<% end %>
-
-<%# パスワードをお忘れですか？ %>
-<%= render "devise/shared/links" %><br/>
-</div>
-</div>
 </div>

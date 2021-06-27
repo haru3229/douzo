@@ -1,13 +1,49 @@
-.form-wrap {
-  width: 50vw;
-  background-color: white;
-  padding-bottom: 70px;
+.accordion-category-mypage {
+  width: 70vw;
+  height: auto;
+  margin: 15px auto 20px;
+  background: #fff;
+  border-radius: 4px;
   color: black;
+  font-size: 3vh;
 }
 
 .accordion-category {
   width: 100%;
-  max-width: 40vw;
+  max-width: 70vw;
+  margin: 15px auto 20px;
+  background: #fff;
+  border-radius: 4px;
+  color: black;
+  font-size: 3vh;
+  text-align: center;
+}
+
+section {
+  text-decoration: none;
+}
+
+.item-page{
+  font-size: 2vmax;
+  display: inline-flex;
+  display: inline-table;
+  text-align:left;
+}
+
+.accordion-category-item {
+  width: 100%;
+  max-width: 70vw;
+  margin: 15px auto 20px;
+  background: #fff;
+  border-radius: 4px;
+  color: black;
+  font-size: 3vh;
+  height:auto;
+}
+
+.accordion-category-search {
+  width: 100%;
+  max-width: 80vw;
   margin: 15px auto 20px;
   background: #fff;
   border-radius: 4px;
@@ -17,26 +53,10 @@
 
 .accordion-category-login {
   width: 100%;
-  max-width: 40vw;
+  max-width: 50vw;
   margin: 15px auto 20px;
   background: #fff;
   border-radius: 4px;
   color: black;
   font-size: 3vh;
-}
-
-.accordion-category li.open .dropdownlink {
-  color: #CDDC39;
-  .fa-chevron-down {
-    transform: rotate(180deg);
-  }
-}
-
-
-.accordion-category li:last-child .dropdownlink {
-  border-bottom: 0;
-}
-
-.field{
-  display: inline-table;
 }

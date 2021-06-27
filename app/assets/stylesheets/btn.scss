@@ -8,38 +8,50 @@
   font-weight: bold;
 }
 
+.search-btn {
+  width: 10vw;
+  height: 4vh;
+  font-weight: bolder;
+  color: white;
+  background: skyblue;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
 .login-btn {
   width: 10vw;
-  height: 3vh;
-  margin: 0 auto;
+  height: 4vh;
+  font-weight: initial;
+  cursor: pointer;
+}
+
+.search-placeholder {
+  width: 20vw;
+  line-height: 30px;
+  font-size: 14px;
+  border: 2px solid black;
 }
 
 .login-red-btn {
-  width: 100%;
+  width: 15vw;
+  height: 5vh;
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
-  line-height: 48px;
+  line-height: 40px;
   font-size: 14px;
+  font-weight: bolder;
   cursor: pointer;
 }
 
-.dropdownlink {
+.sell-btn{
+  width: 15vw;
+  height: 5vh;
+  background: yellowgreen;
+  border: 1px solid yellowgreen;
+  color: #fff;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: bolder;
   cursor: pointer;
-  display: block;
-  padding: 15px 15px 15px 45px;
-  font-size: 18px;
-  border-bottom: 1px solid #ccc;
-  color: #212121;
-  position: relative;
-  transition: all 0.4s ease-out;
-  i {
-    position: absolute;
-    top: 17px;
-    left: 16px;
-  }
-  .fa-chevron-down {
-    right: 12px;
-    left: auto;
-  }
 }

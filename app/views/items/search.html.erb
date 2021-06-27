@@ -1,17 +1,17 @@
-<div class="top-image">
+<div class="top-search-image">
   <div class="top-header">
 
     <%= render "shared/menu" %>
-
-    <br/><br/><div class="title2">アイテムを探す</div>
+  </div>
+  <div class="accordion-category-search">
+    <br/><h3>アイテムを探す🎁</h3>
 
 
     <%# 検索フォーム %>
     <%= form_with(url: search_items_path, local:true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "アイテム名でさがす", class: "login-btn" %>
-      <%= form.submit "さがす", class: "login-btn" %>
+      <%= form.text_field :keyword, placeholder: "（アイテム名）", class: "search-placeholder" %>
+      <%= form.submit "さがす", class: "search-btn" %>
     <% end %>
-  </div>
 
   
     <% @items.reverse_each do |item| %>
@@ -19,7 +19,5 @@
         <%= render partial: "shared/item", locals: { item: item } %>
       </div>
     <% end %>
-</div>
-
-<div class="second-top-image">
+  </div>
 </div>

@@ -1,39 +1,30 @@
 <%# ログイン画面 %>
 <div class="top-image">
-    <div class="top-header">
-<%= render "shared/menu" %>
+  <div class="top-header">
+    <%= render "shared/menu" %>
+  </div>
 
-<div class='accordion-category-login'>
-<br/>
-<h3>ログイン</h3>
-<br/>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %>
-    <span class="red-btn">必須</span> <br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class='accordion-category-login'><br/>
+    <h3>ログイン</h3>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><span class="red-btn">必須</span> <br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="field">
+        <%= f.label :password %><span class="red-btn">必須</span> <br/>
+        <%= f.password_field :password, autocomplete: "current-password" %>  
+      </div>
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %><%= f.label :記憶させる %><br/><br/>
+        </div>
+      <% end %>
+        <div class="field">
+        <%= f.submit "ログイン", class:"login-red-btn" %>
+        </div>
+    <% end %>
+    <br/><br/>
+    <%= render "devise/shared/links" %><br/>
   </div>
-  <br/><br/>
-  <div class="field">
-    <%= f.label :password %>
-    <span class="red-btn">必須</span> <br/>
-    <%= f.password_field :password, autocomplete: "current-password" %>  
-  </div>
-  <br/>
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :記憶させる %>
-    </div>
-  <% end %>
-  <br/><br/>
-  <div class="login-btn">
-    <%= f.submit "ログイン", class:"login-red-btn" %>
-  </div>
-<% end %>
-<br/><br/>
-<%= render "devise/shared/links" %><br/>
-
-</div>
-</div>
 </div>

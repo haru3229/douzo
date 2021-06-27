@@ -1,61 +1,57 @@
-<div class="top-image">
-    <div class="top-header">
-<%= render "shared/menu" %>
-</div>
-<%# アイテムの詳細,コメントも %>
-<br/><span class="title2">
-<%= "#{@item.user.nickname}さんの出品" %></div><br/>
-
-<% if @item.image.attached? %>
-  <%= image_tag @item.image.variant(resize: '600x600') %>
-<% end %>
-
-<div class="accordion-category"><br/>
-[アイテム名]<%= @item.name %><br>
-[カテゴリー]<%= @item.category.name %><br>
-[アイテムの説明]<%= @item.item_text %><br>
-[交換方法]<%= @item.price %></div>
-</div>
-</div>
-<% if user_signed_in? %>
-  <% if current_user == @item.user %>
-    <%= link_to '編集', edit_item_path(@item.id), method: :get %>
-    <%= link_to '削除', item_path(@item.id), method: :delete %>
-  <% else %>
-    <%= link_to '交換画面に進む' %><br/>
-    <%= link_to "#{@item.user.nickname}さんの出品一覧へ", user_path(@item.user.id) %><br/>
-  <% end %>
-<% end %>
-
-<%# コメント %>
-<div class="container">
-  <% if user_signed_in? %>
-    <%= form_with(model: [@item, @comment], local: true) do |form| %>
-      <%= form.text_area :comment, placeholder: "コメント記入欄", rows: "2" %>
-      <%= form.submit "コメントする" %>
-    <% end %>
-  <% else %>
-    <strong><p>*** コメントの投稿には新規登録/ログインが必要です ***</p></strong>
-  <% end %>
-
-  <div class="comments">
-    <h4>＜コメント一覧＞</h4>
-    <% @comments.reverse_each do |comment| %>
-      <p>
-        <strong><%= link_to comment.user.nickname, user_path(comment.user_id) %>さん:</strong>
-        <%= comment.comment %>
-        <% if user_signed_in? %>
-          <% if current_user == comment.user %>
-            <%= link_to '編集', edit_item_comment_path(comment.id), method: :get %>
-            <%= link_to '削除', item_comment_path(comment.item.id, comment.id), method: :delete %>
-          <% end %>
-          <% else %>
-        <% end %>
-      </p>
-    <% end %>
+<div class="top-long-image">
+  <div class="top-header">
+    <%= render "shared/menu" %>
   </div>
-</div>
-<%# コメント ここまで %>
+  <%# アイテムの詳細,コメントも %>
+  <div class="accordion-category-item">
+    <br/><h3><%= "#{@item.user.nickname}さんの出品" %></h3><br/>
 
-</div>
+    <% if @item.image.attached? %>
+      <%= image_tag @item.image, class: "one-item"%>
+    <% end %>
+    
+    <div class="item-page">
+      [アイテム名]        <%= @item.name %></a><br>
+      [カテゴリー]        <%= @item.category.name %><br>
+      [アイテムの説明]     <%= @item.item_text %><br>
+      [交換方法]          <%= @item.price %></div>
+    
+     <div><br/>
+      <% if user_signed_in? %>
+        <% if current_user == @item.user %>
+          <%= link_to '編集', edit_item_path(@item.id), method: :get %>
+          <%= link_to '削除', item_path(@item.id), method: :delete %><br />
+          ***出品者様だけに表示されます***<br/><br/>
+        <% else %>
+          <%= link_to '交換したい' %><br/><br/>
+          <%= link_to "#{@item.user.nickname}さんの出品一覧へ", user_path(@item.user.id) %><br/>
+        <% end %>
+      <% end %>
+     </div>
+      <%# コメント %>
+      <div class="container">
+        <% if user_signed_in? %><br/>
+          <%= form_with(model: [@item, @comment], local: true) do |form| %>
+          <%= form.text_area :comment, placeholder: "コメント記入欄", rows: "2" %><br />
+          <%= form.submit "コメントする" %>
+        <% end %>
+        <% else %>
+          <p>*** コメントの投稿には新規登録/ログインが必要です ***</p>
+        <% end %>
+      </div>
+      <div class="comments">
+        <h3>＜コメント一覧＞</h3>
+        <p><% @comments.reverse_each do |comment| %>
+          <%= link_to "#{comment.user.nickname}さん", user_path(comment.user_id) %>：
+          <%= comment.comment %></p>
+          <% if user_signed_in? %>
+            <% if current_user == comment.user %>
+              <%= link_to '編集', edit_item_comment_path(comment.id), method: :get %>
+              <%= link_to '削除', item_comment_path(comment.item.id, comment.id), method: :delete %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

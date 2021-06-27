@@ -1,61 +1,58 @@
 <%#= ユーザー編集画面 %>
-<div class="top-image">
-    <div class="top-header">
-<%= render "shared/menu" %>
-
-<h2><%= "#{current_user.nickname}さんのユーザー編集ページ" %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-変更がないものはそのままで大丈夫です<br/><br/>
-<div class='accordion-category'>
-<div class="field"><br/><br/>
-    <%= f.label :ニックネーム %><br/>
-    <%= f.text_field :nickname, autofocus: true, placeholder:"例） もんちゃん", autocomplete: "nickname" %>
+<div class="top-long-image">
+  <div class="top-header">
+    <%= render "shared/menu" %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <div class='accordion-category'>
+    <br/>
+    <h3><%= "#{current_user.nickname}さんのユーザー編集ページ" %></h3>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <p>（変更がないものはそのままで大丈夫です）</p>
 
-  <div class="field">
-    <%= f.label :パスワード %>（6文字以上）<br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
+    <div class="field">
+      <%= f.label :ニックネーム %><br/>
+      <%= f.text_field :nickname, autofocus: true, placeholder:"例） もんちゃん", autocomplete: "nickname" %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+      </div>
     <% end %>
+
+    <div class="field">
+      <%= f.label :パスワード %>（6文字以上）<br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% if @minimum_password_length %><br />
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :パスワード %>（確認用）<br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :今のパスワード %><span class="red-btn">必須</span><br />
+      <%= f.password_field :current_password, autocomplete: "current-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :自己紹介 %>（任意）<br />
+      <%= f.text_area :introduction, autofocus: true, placeholder:"趣味はキャンプです", autocomplete: "introduction" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "編集OK" %>
+    </div>
+    <% end %>
+    <br/>
+    <p><%= button_to "アカウントを消す", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
   </div>
-
-  <div class="field">
-    <%= f.label :パスワード %>（確認用）<br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :今のパスワード %>
-    <span class="red-btn">必須</span><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :自己紹介 %>（任意）<br />
-    <%= f.text_area :introduction, autofocus: true, placeholder:"趣味はキャンプです", autocomplete: "introduction" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "編集OK" %>
-  </div>
-<% end %>
-</div>
-
-<h3>卒業</h3>
-
-<p><%= button_to "アカウントを消す", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-</div>
 </div>

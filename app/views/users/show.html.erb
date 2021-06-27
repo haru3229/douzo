@@ -1,20 +1,19 @@
 <%# 個人の詳細 「MYページ」 %>
-<div class="top-image">
+<div class="top-long-image">
   <div class="top-header">
 
     <%# メニュー %>
     <%= render "shared/menu" %>
-
-    <br/><br/>
-    <span class="title2"><%= "#{@user.nickname}さんのお部屋（出品数#{@items.count}）" %></span><br/>
-    <%= link_to "(ユーザー情報の編集)", edit_user_registration_path, class: "title3" %>
   </div>
+
+  <div class="accordion-category-mypage">
+    <br/>
+    <h3><%= "#{@user.nickname}さんのお部屋（出品数  #{@items.count}🎉）"%></h3>
+    <%= link_to "(ユーザー情報の編集)", edit_user_registration_path, class: "title3" %><br/>
     <% @items.reverse_each do |item| %>
-    <div class="item-list">
-    <%= render partial: "shared/item", locals: { item: item } %>
-    </div>
+      <div class="item-list">
+        <%= render partial: "shared/item", locals: { item: item } %>
+      </div>
     <% end %>
-</div>
-
-<div class="second-top-image">
   </div>
+</div>
