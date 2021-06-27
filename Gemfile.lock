@@ -292,6 +292,7 @@ DEPENDENCIES
   rename
   rubocop
   sass-rails (~> 5)
+  sassc
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
