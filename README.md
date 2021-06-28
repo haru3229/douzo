@@ -8,7 +8,7 @@
  - 不要になった学用品（体操服，制服，学習道具など）を出品したり，欲しい学用品を購入または譲り受けることができます。
  - 出品されたアイテムに対してコメントをしたり，購入者と出品者が個別にコメントを交わしたりすることもできます。
 
-# App URL
+# アプリケーション URL
 https://douzo-app.herokuapp.com/
 
 # 制作背景
@@ -23,11 +23,9 @@ https://douzo-app.herokuapp.com/
  以上の願いをマッチさせるためのアプリケーションを作りたいと思い，開発している途中です。
 
 # DEMO
- ### Myページ
- [![Image from Gyazo](https://i.gyazo.com/7351a4b4401d1998fa525f4ae842e855.gif)](https://gyazo.com/7351a4b4401d1998fa525f4ae842e855)
 
  ### アイテム検索
- [![Image from Gyazo](https://i.gyazo.com/b1be3f7bd7b329b1b04151364a44aa78.gif)](https://gyazo.com/b1be3f7bd7b329b1b04151364a44aa78)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/83441050/123573766-7db12a00-d809-11eb-9d20-0a84cfb422f8.gif)
 
 # 実装予定の機能
  - 購入予定者と出品者だけでコメントしあえる機能
