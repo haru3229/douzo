@@ -8,13 +8,13 @@
 
 //スライド
 .slider {
-  width: 25vw;
-  height: 25vh;
+  width: 40vw;
+  height: 40vh;
   position: relative;
-  left: 33vw;
-  top: 15vh;
+  left: 25vw;
+  top: 6vh;
   animation-name: fadein;
-    animation-duration: 20s;
+    animation-duration: 19s;
 }
 @keyframes fadein {
 from {
@@ -29,7 +29,7 @@ to {
 //スライド//
 
 .top-image {
-  background-image: image-url('kuma.jpg');
+  background-image: image-url('bear.jpg');
   background-size: cover;
   background-position: center center;
   text-align: center;
