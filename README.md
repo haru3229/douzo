@@ -2,9 +2,14 @@
 
    「DouzoApp 〜どうぞ〜」
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/83441050/123572982-0f1f9c80-d808-11eb-9371-e1dc1511fb83.gif)
+
 # アプリケーションの概要
  - 不要になった学用品（体操服，制服，学習道具など）を出品したり，欲しい学用品を購入または譲り受けることができます。
  - 出品されたアイテムに対してコメントをしたり，購入者と出品者が個別にコメントを交わしたりすることもできます。
+
+# App URL
+https://douzo-app.herokuapp.com/
 
 # 制作背景
  ### 「誰の」
@@ -25,10 +30,17 @@
  [![Image from Gyazo](https://i.gyazo.com/b1be3f7bd7b329b1b04151364a44aa78.gif)](https://gyazo.com/b1be3f7bd7b329b1b04151364a44aa78)
 
 # 実装予定の機能
- - 購入予定者と出品者だけでコメントしあえる
+ - 購入予定者と出品者だけでコメントしあえる機能
  - 購入予約をすると，予約済みの表示がされるようにする
  - 出品物のサンプル画像をスライド表示する
- - 出品登録数に応じて，画面の表示を変える
+
+# 開発環境
+- VScode
+- Ruby 2.6.5
+- Rails 6.0.0
+- mysql2 0.4.4
+- JavaScript
+- heroku 7.54.1
 
 # DB設計
 
