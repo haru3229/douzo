@@ -8,11 +8,11 @@
 
 //スライド
 .slider {
-  width: 40vw;
-  height: 40vh;
+  width: 30vw;
+  height: auto;
   position: relative;
   left: 25vw;
-  top: 6vh;
+  top: 4vh;
   animation-name: fadein;
     animation-duration: 19s;
 }
