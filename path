@@ -1,4 +1,4 @@
-Prefix Verb   URI Pattern                                                                              Controller#Action
+ Prefix Verb   URI Pattern                                                                              Controller#Action
                      new_user_session GET    /users/sign_in(.:format)                                                                 devise/sessions#new
                          user_session POST   /users/sign_in(.:format)                                                                 devise/sessions#create
                  destroy_user_session DELETE /users/sign_out(.:format)                                                                devise/sessions#destroy
@@ -20,6 +20,7 @@ Prefix Verb   URI Pattern                                                       
                          item_comment PATCH  /items/:item_id/comments/:id(.:format)                                                   comments#update
                                       PUT    /items/:item_id/comments/:id(.:format)                                                   comments#update
                                       DELETE /items/:item_id/comments/:id(.:format)                                                   comments#destroy
+                          item_orders GET    /items/:item_id/orders(.:format)                                                         orders#index
                          search_items GET    /items/search(.:format)                                                                  items#search
                                 items GET    /items(.:format)                                                                         items#index
                                       POST   /items(.:format)                                                                         items#create
@@ -50,3 +51,4 @@ rails_conductor_inbound_email_reroute POST   /rails/conductor/action_mailbox/:in
                    rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
             update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
                  rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+kotaro@habarakoutarounoMacBook-Pro douzo-app % 
