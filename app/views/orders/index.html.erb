@@ -1,0 +1,27 @@
+<%# 購入ページ %>
+<div class="top-image">
+  <div class="top-header">
+    <%# メニュー %>
+    <%= render "shared/menu" %>
+  </div>
+
+  <div class="accordion-category-item">
+    <br/>
+    <h3>アイテム交換ページ😄🎁😄</h3>
+    <p><%= "#{@item.user.nickname}さんの出品" %></p>
+
+    <%  if @item.image.attached? %>
+      <%= image_tag @item.image, class: "one-item"%>
+    <% end %>
+    <br/>
+    <div class="item-page">
+      [アイテム名]      <%= @item.name %><br>
+      [カテゴリー]      <%= @item.category.name %><br>
+      [アイテムの説明]   <%= @item.item_text %><br>
+      [交換方法]        <%= @item.price %><br/>
+      [交換場所]        <%#= @item.change %><br/>
+      交換について
+
+    <div><br/>
+  </div>
+</div>

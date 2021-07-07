@@ -4,7 +4,7 @@
   </div>
   <%# アイテムの詳細,コメントも %>
   <div class="accordion-category-item">
-    <br/><h3><%= "#{@item.user.nickname}さんの出品" %></h3><br/>
+    <br/><h3><%= "#{@item.user.nickname}さんの出品🎁" %></h3><br/>
 
     <% if @item.image.attached? %>
       <%= image_tag @item.image, class: "one-item"%>
@@ -17,39 +17,45 @@
       [交換方法]          <%= @item.price %></div>
     
      <div><br/>
-      <% if user_signed_in? %>
+     <%#ログインユーザーのみ表示%>
+      <% if user_signed_in? %> 
+        <%#現在のユーザーが出品者の場合%>
         <% if current_user == @item.user %>
           <%= link_to '編集', edit_item_path(@item.id), method: :get %>
           <%= link_to '削除', item_path(@item.id), method: :delete %><br />
           ***出品者様だけに表示されます***<br/><br/>
+        <%#ログインユーザーだけど出品者ではない場合%>
         <% else %>
-          <%= link_to '交換したい' %><br/><br/>
+          <%= link_to '交換したい', item_orders_path(@item.id) %><br/><br/>
           <%= link_to "#{@item.user.nickname}さんの出品一覧へ", user_path(@item.user.id) %><br/>
         <% end %>
       <% end %>
      </div>
       <%# コメント %>
       <div class="container">
+      <%#ログインユーザーのみコメントできる%>
         <% if user_signed_in? %><br/>
           <%= form_with(model: [@item, @comment], local: true) do |form| %>
           <%= form.text_area :comment, placeholder: "コメント記入欄", rows: "2" %><br />
           <%= form.submit "コメントする" %>
         <% end %>
+        <%#ログインユーザー以外はコメントできない%>
         <% else %>
           <p>*** コメントの投稿には新規登録/ログインが必要です ***</p>
         <% end %>
       </div>
+      <%#コメントは誰でも見られる%>
       <div class="comments">
         <h3>＜コメント一覧＞</h3>
-        <p><% @comments.reverse_each do |comment| %>
+        <% @comments.reverse_each do |comment| %>
           <%= link_to "#{comment.user.nickname}さん", user_path(comment.user_id) %>：
-          <%= comment.comment %></p>
-          <% if user_signed_in? %>
+          <%= comment.comment %>
+          <%#現在のユーザーがコメントしたユーザーの場合、編集・削除できる%>
             <% if current_user == comment.user %>
               <%= link_to '編集', edit_item_comment_path(comment.id), method: :get %>
               <%= link_to '削除', item_comment_path(comment.item.id, comment.id), method: :delete %>
+              <br/>
             <% end %>
-          <% end %>
         <% end %>
       </div>
     </div>
