@@ -51,6 +51,10 @@ group :test do
   gem 'webdrivers'
 end
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
@@ -60,7 +64,7 @@ gem 'active_hash'
 gem 'ransack'
 gem 'ancestry'
 gem 'jquery-rails'
-gem 'bootstrap'
+gem 'bootstrap', '~> 5.0.0.beta1'
 gem 'uglifier'
 gem 'rename'
 gem 'sassc'
