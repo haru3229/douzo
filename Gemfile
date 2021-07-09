@@ -73,3 +73,4 @@ gem 'bootstrap', '~> 5.0.0.beta1'
 gem 'uglifier'
 gem 'rename'
 gem 'sassc'
+gem "aws-sdk-s3", require: false
